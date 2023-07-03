@@ -1,8 +1,9 @@
 func foo() -> Void {}
 
+// hello
 class ABCD {
   func bar() {
-    
+
   }
 }
 
