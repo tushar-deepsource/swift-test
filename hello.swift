@@ -2,7 +2,7 @@ func foo() -> Void {}
 
 // hello
 class ABCD {
-  func bar() {
+  func bars() {
 
   }
 }
