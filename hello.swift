@@ -1,5 +1,11 @@
 func foo() -> Void {}
 
+class ABCD {
+  func bar() {
+    
+  }
+}
+
 // [SW-P1006]: 9
 myString == ""
 
