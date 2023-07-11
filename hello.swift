@@ -1,6 +1,10 @@
 // docs
 func foo() -> Void {}
 
+func foo1() -> Void {}
+
+func foo2() -> Void {}
+
 // hello
 class ABCD {
   func bars() {
