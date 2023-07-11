@@ -1,3 +1,9 @@
+let someNullableStringValue: String? = "optional string"
+
+if let someNullableStringValue = someNullableStringValue { 
+    // `someNullableStringValue` is not null
+}
+
 // docs
 func foo() -> Void {}
 
