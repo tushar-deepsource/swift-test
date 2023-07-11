@@ -1,3 +1,4 @@
+// docs
 func foo() -> Void {}
 
 // hello
