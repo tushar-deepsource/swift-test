@@ -4,4 +4,4 @@ version = 1
 name = "swift"
 
   [analyzers.meta]
-  skip_doc_coverage = ["method"]
+  swift_version = "3.0"
