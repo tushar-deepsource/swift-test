@@ -1,0 +1,32 @@
+name: tests
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  tests:
+    name: tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+          ref: ${{ github.event.pull_request.head.sha }}
+          
+      - uses: swift-actions/setup-swift@v1
+        with:
+          swift-version: "5.8.0"
+
+      - name: Install dependencies and build application
+        run: swift build
+
+      - name: Run unit tests
+        run: |
+          swift test --enable-code-coverage --show-codecov-path
+          $(dirname "$(realpath "$(which swift)")")/llvm-cov export --ignore-filename-regex='(.build|Tests)[/\\].*' -format="lcov" .build/x86_64-unknown-linux-gnu/debug/SwiftTestPackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > info.lcov
+          curl https://deepsource.io/cli | sh 
+          ./bin/deepsource report --analyzer test-coverage --key swift --value-file info.lcov
