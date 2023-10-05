@@ -1,10 +1,7 @@
 version = 1
 
 [[analyzers]]
-name = "test-coverage"
-
-[[analyzers]]
 name = "swift"
 
-  [analyzers.meta]
-  swift_version = "3.0"
+[[transformers]]
+name = "swift-format"
